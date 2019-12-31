@@ -1,0 +1,71 @@
+public class Hello {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+
+	}
+
+}
+
+
+
+
+
+public class Affichage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int entier = 2017;
+		double reel = 3.1415 ;	
+		char lettre = 'S';
+		
+		System.out.println("entier : "+ entier);
+		System.out.println("reel : "+ reel);
+		System.out.println("lettre : " + lettre);
+		
+		System.out.println(entier + reel);	/*
+		 dans cette ligne lorsque que l'on fait entier + reel 
+		 les 2 nombres sont additionnés */
+		System.out.println("" + entier + reel);	 /*
+		à cette ligne en revanche le + effectue une concatenation 
+		donc entier et reel sont affichés collés l'un a l'autre*/
+	}
+
+}
+
+
+
+
+
+import java.util.*;
+public class LectureClavier {
+	static final Scanner input = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int entier;
+		double reel;
+		String chaine;
+		
+		System.out.println("Entrer un entier :");
+		entier = input.nextInt();
+		System.out.println("entrez un mot : ");
+		chaine = input.next();
+		System.out.println("Valeurs saisies : " + entier + " " + chaine);
+		
+		System.out.println("Une autre valeur entiere suivi d'un reel svp : ");
+		entier = input.nextInt();
+		reel = input.nextDouble(); /*
+		bizarrement si on rentre un reel (x.xxx) cela renvoit une erreur 
+		mais si on rentre un entier le programme fonctionne et le prend 
+		comem un reel (si rentre 3 il prend 3.0   pk?????)*/
+		System.out.println("Valeurs saisies : " + entier + " " + reel);
+		System.out.println("Fin_du_programme");
+		
+ 
+	}
+
+}
+
+
+
