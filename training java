@@ -69,3 +69,62 @@ public class LectureClavier {
 
 
 
+
+import java.util.*;
+public class F2c {
+	static final Scanner input= new Scanner(System.in);
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double fahr;
+		double celsius;
+		
+		System.out.println("Entrer une température :");
+		fahr = input.nextDouble();
+		
+		//celsius = 5*(fahr-32)/9;
+		//celsius = 5/9+(fahr-32);
+				
+		/* 
+		 * on peut explique la différence par la priorité des 
+		 * calculs dans la premieres formule 
+		 * on fait la temp - 32 puis multiplie par 5 puis divise 
+		 * par 9 
+		 * en revanche dans la deuxieme on fait 5 diviser par 9 et on additionne avec la température
+		 * - 32 */
+		
+		//piur être sur d'avoir le bon resultat on peut faire: 
+		
+		celsius = (((fahr-32)*5)/9);
+		System.out.println("la température en celsius est :" + celsius);
+	}
+
+}
+
+
+
+
+import java.util.Scanner;
+
+public class PerimetreSurface {
+	private static final Scanner input = new Scanner(System.in);
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Entrer le rayon du cercle : ");
+		double rayon = input.nextDouble();
+		
+		double perimetre = 2.* Math.PI *rayon;
+		double surface = Math.PI * Math.pow(rayon,2);
+		
+		System.out.println("un disque de rayon " + rayon +" a un périmetre de "+ perimetre +" et une surface de " + surface );
+
+	}
+
+}
+
+
+
+
