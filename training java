@@ -128,3 +128,35 @@ public class PerimetreSurface {
 
 
 
+
+import java.util.*;
+import java.math.*;
+
+public class nombre_radiateurs {
+	static final Scanner input = new Scanner (System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double longueur, largeur, hauteur, puissanceradiateur, resultat;
+		
+		System.out.println("Entrer la longueur de la pièce : ");
+		longueur = input.nextDouble();
+		
+		System.out.println("entrer la largeur de la pièce : ");
+		largeur = input.nextDouble();
+		
+		System.out.println("entrer la hauteur de la pièce : ");
+		hauteur = input.nextDouble();
+		
+		System.out.println("entrer la puissance du radiateur : ");
+		puissanceradiateur = input.nextDouble();
+		
+		resultat = longueur * largeur * hauteur / puissanceradiateur;
+		resultat = Math.floor(resultat) + 1;
+		System.out.println("pour chauffer cette pièce il faut " + resultat + " radiateurs");
+
+	}
+
+}
+
+
