@@ -160,3 +160,67 @@ public class nombre_radiateurs {
 }
 
 
+
+
+
+
+
+/*Tonte de gazon*/
+/*on veut fonction qui demande longTer , largTer, longMais, largMais, rayPisc, x
+ * faut faire longTer *largTer - longMais*largMais
+ * 	- perimetre ( 2 * Pi * rayPisc)
+ *  
+ *  * x pour obtenir le temps necessaire pour tondre la pelouse */
+import java.util.*;
+public class tonte_de_gazon {
+	static final Scanner input = new Scanner  (System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double longTer, largTer,longMais,largMais, rayPisc;
+		int x;
+		
+		System.out.println("entrer la longueur du terrain : ");
+		longTer = input.nextDouble();
+		
+		System.out.println("entrer la largeur du terrain : ");
+		largTer = input.nextDouble();
+		
+		System.out.println("entrer la longueur de la maison : ");
+		longMais = input.nextDouble();
+		
+		System.out.println("entrer la largueur de la maison : ");
+		largMais = input.nextDouble();
+		
+		System.out.println("entrer le rayon de la piscine : ");
+		rayPisc = input.nextDouble();
+		
+		System.out.println("entrer le temps necessaire pour tondre un m² de gazon : ");
+		x = input.nextInt();
+		
+		
+		double  surfaceTerrain, surfaceMaison, surfacePiscine, surfaceGazon;
+		
+		surfaceTerrain = longTer * largTer;
+		surfaceMaison = longMais * largMais ;
+		surfacePiscine = Math.PI * Math.pow(rayPisc, 2) ;
+		
+		surfaceGazon = surfaceTerrain - surfaceMaison - surfacePiscine  ;
+		
+		double tempsNecessaireSecondes;
+		
+		tempsNecessaireSecondes = surfaceGazon * x ;
+		
+		double tempsNecessaireMinutes;
+		
+		tempsNecessaireMinutes = tempsNecessaireSecondes % 60 ; 
+		
+		
+		System.out.println("pour tondre cette surface de gazon il faut " + tempsNecessaireSecondes + " secondes " );
+		
+				
+		
+	}
+
+}
+
