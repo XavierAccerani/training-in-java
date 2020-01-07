@@ -271,3 +271,42 @@ public class nombre_paquet_cereale {
 	
 
 }
+
+
+
+
+
+
+/*Année Bissextile*/
+
+/* on veut programme demande une année 
+ * si reste de division du nombre entré par 4 == 0 mais divisé par 100 != 0
+ * alors imprime " bissextile "
+ * mais si divisé par 400 == 0 alors renvoit  "bissextile" */
+
+import java.util.*;
+public class Année_Bissextile {
+	static final Scanner input = new Scanner(System.in) ;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int annee ; 
+		String resultat;
+		
+		System.out.println("entrer une année valide : ");
+		annee = input.nextInt() ;
+		
+		resultat = "n'est pas bissextile";
+		
+		
+		if ((annee % 4 == 0 && annee % 100 != 0) || annee % 400 == 0) {
+			resultat = "est bissextile";
+			
+		}
+		
+		System.out.println("Cette année "+resultat);			
+
+	}
+
+}
+
