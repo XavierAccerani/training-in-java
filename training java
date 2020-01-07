@@ -224,3 +224,50 @@ public class tonte_de_gazon {
 
 }
 
+
+
+
+
+
+/*Paquet de céréales*/
+
+
+/*on veut fct qui convertit des onces en tonnes
+ * input le poids en once
+ * ecrit le poids du paquets en systeme métrique
+ * ecrit nombre de paquet faisable avec 1 tonnes de ces cereales */
+
+import java.util.*;
+public class nombre_paquet_cereale {
+	static final Scanner input = new Scanner(System.in);
+	
+																					/*les doubles doivent être tapés avec des ,   et non des .    ex:2,5   et non pas 2.5*/
+	public static void main(String[] args) {
+		double poidsOnces, poidsTonnes, poidsKilos, poidsGrammes, tonnesEnOnces ;
+		
+		System.out.println("entrer le poids de la boites de céréales en onces :  ");
+		poidsOnces = input.nextDouble() ;
+		
+		tonnesEnOnces = 35273.96;
+		poidsTonnes = 1 / tonnesEnOnces * poidsOnces ;
+		poidsKilos = poidsTonnes * 1000;
+		poidsGrammes = poidsKilos * 1000 ;
+		
+		
+		System.out.println(poidsOnces +" vaut "+ poidsTonnes + " tonnes ");
+		System.out.println("Cela équivaut également à "+poidsKilos+ " kilos");
+		System.out.println("et cela correspond à " +poidsGrammes+ " grammes");
+		
+		
+		double nombrePaquets ;
+		
+		nombrePaquets =  tonnesEnOnces / poidsOnces;
+		
+		System.out.println("On peut donc faire "+ nombrePaquets +" paquets avec une tonne de céréales");
+		
+		
+		
+	}
+	
+
+}
