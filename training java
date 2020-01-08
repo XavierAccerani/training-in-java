@@ -310,3 +310,124 @@ public class Année_Bissextile {
 
 }
 
+
+
+
+
+
+
+
+
+/* on veut fonction prend 2 nombres 
+ * prend un opérateur +,-,*,/
+ * effectue le calcul et affiche le résultat
+ * une variante avec if  else 
+ * une variante avec switch  case*/ 
+
+import java.util.*;
+public class calculatrice_simple {
+	static final Scanner input = new Scanner(System.in) ;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		double nombre1, nombre2 ;
+		char operateur;
+		
+		System.out.println("entrer un nombre : ");
+		nombre1 = input.nextDouble();
+		
+		System.out.println("entrer l'opérateur : ");
+		operateur = input.next().charAt(0) ;
+		
+		System.out.println("entrer un autre nombre : ");
+		nombre2 = input.nextDouble();
+		
+		double resultat;
+		resultat = 0;
+		
+		if (operateur == '+') {
+			resultat = nombre1 + nombre2;
+		}
+		
+		else if (operateur == '-') {
+			resultat = nombre1 - nombre2;
+		}
+		
+		else if (operateur == '*') {
+			resultat = nombre1 * nombre2;
+		}
+		else if (operateur == '/') {
+			resultat = nombre1 / nombre2;
+		}
+		
+		
+		System.out.println("Le résultat de ce calcul est de "+ resultat + " !");
+
+		
+	}
+
+}
+
+
+
+
+
+
+/*variante de la calculatrice simple mais en 
+ * utilisant switch case plutot que if  else if  else*/
+
+import java.util.*;
+public class calculatrice_version_switch {
+	static final Scanner input = new Scanner(System.in) ;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double nombre1, nombre2 ;
+		char operateur;
+		
+		System.out.println("entrer un nombre : ");
+		nombre1 = input.nextDouble() ;
+		
+		System.out.println("entrer l'opérateur du calcul");
+		operateur = input.next().charAt(0);
+		
+		System.out.println("entrer un second nombre : ");
+		nombre2 = input.nextDouble() ;
+		
+		
+		double resultat = 0;
+		
+		switch(operateur) {
+		
+		case '+':
+			resultat = nombre1 + nombre2 ;
+			System.out.println("Le résultat de ce calcul est de "+resultat+" !!");
+			break;
+		
+		case '-':
+			resultat = nombre1 - nombre2;
+			System.out.println("Le résultat de ce calcul est de "+resultat+" !!");
+			break;
+			
+		case '*':
+			resultat = nombre1 * nombre2;
+			System.out.println("Le résultat de ce calcul est de "+resultat+" !!");
+			break;
+			
+		case '/':
+			resultat = nombre1 / nombre2;
+			System.out.println("Le résultat de ce calcul est de "+resultat+" !!");
+			break;
+		
+		}
+		
+
+	}
+
+}
+
+
+
+
+
