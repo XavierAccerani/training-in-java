@@ -431,3 +431,57 @@ public class calculatrice_version_switch {
 
 
 
+
+
+
+/*on veut programme qui
+ * - demande int n
+ * - demande n nombres (double)
+ * - additionne les n nombres 
+ * - affiche la somme 
+ * - divise la somme par n
+ * - affiche la moyenne 
+ * 
+ * - le faire avec while 
+ * - le faire avec do....while 
+ * - le faire avec for */
+
+import java.util.*;
+
+public class moyenne {
+	static final Scanner input = new Scanner(System.in) ;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n, compteur = 0; 
+		double nombre;
+		
+		System.out.println("combien de valeurs voulez vous entrer : ");
+		n = input.nextInt();
+		
+		double somme = 0;
+		
+		while (compteur < n) {
+			
+			System.out.println("Entrer une valeur : ");
+			nombre = input.nextDouble();
+			
+			somme += nombre;
+			
+			compteur += 1;		
+		}
+		
+		System.out.println("La somme de ces valeurs est de "+ somme +" !!");
+		
+		double moyenne = somme / n;
+		
+		System.out.println("La moyenne de ces valeurs est quand à elle de "+ moyenne +" !! ");
+		
+
+	}
+
+}
+
+
+
+
