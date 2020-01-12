@@ -485,3 +485,56 @@ public class moyenne {
 
 
 
+
+
+/*on veut fonction qui 
+ * - demande un int n a l'utilisateur 
+ * - demande n double a l'utilisateur 
+ * - affiche somme de ces nombres 
+ * - affiche moyenne de ces nombres 
+ * - utilise do...while */
+
+import java.util.*;
+public class moyenneDoWhile {
+	static final Scanner input = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int n;
+		double nombre, somme = 0;
+		
+		System.out.println("Hello friend");
+		System.out.println("lancement du programme...");
+		System.out.println("combien de nombre compte tu entrer? ");
+		n = input.nextInt();
+		
+		System.out.println("d'acconrd tu veux entrer "+ n +" nombres");
+		
+		int compteur = 0;
+		
+		do
+		{
+		System.out.println("Quel nombre souhaite tu entrer ?");
+		nombre = input.nextDouble();
+		somme += nombre ;
+		
+		compteur += 1;
+		
+		
+		
+		
+		} while (compteur < n);
+		
+		System.out.println("La some de tous ces nombres est de : "+ somme +" !!");
+		
+		double moyenne= somme/n ;
+		System.out.println("Et la moyenne de tous ces nombres est de "+ moyenne +" !");
+
+		System.out.println("Fermeture du programme...");
+	}
+
+}
+
+
+
