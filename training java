@@ -538,3 +538,47 @@ public class moyenneDoWhile {
 
 
 
+
+
+
+
+
+
+
+import java.util.*;
+public class moyenneFor {
+	public static Scanner input = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Hello friend");
+		System.out.println("Lancement du programme...");
+		
+		int n;
+		double nombre, somme= 0;
+		
+		System.out.println("Combien de nomùbres compte tu entrer?");
+		n = input.nextInt();
+		
+		System.out.println("D'accord tu veux entrer "+ n +" nombres");
+		
+		for (int compteur = 0; compteur < n; compteur += 1) {
+			
+			System.out.println("quel nombre souhaite tu entrer ?");
+			nombre = input.nextDouble();
+			somme += nombre;
+			
+			
+		}
+		
+		double moyenne;
+		
+		moyenne = somme / n ;
+		System.out.println("La somme de tous les nombres que tu viens d'entrer est de "+somme +" !\nQuand à la moyenne de ces nombres elle est de "+ moyenne +" !");
+		
+
+	}
+
+}
+
