@@ -582,3 +582,68 @@ public class moyenneFor {
 
 }
 
+
+
+
+
+
+
+
+
+/* on  veut programme qui :
+ * - choisit un entier au hasard entre 1 et 100
+ * - prend un nombre entier entré par le joueur 
+ * - compare le nombre entré avec celui choisit 
+ * - dit si le nombre a trouver est supérieur ou inférieur
+ * - s'il trouve le bon nombre alors la partie s'arrete et le nombre de coup joué s'affiche  */
+
+import java.util.*;
+public class jeuDevine {
+	public static Scanner input = new  Scanner (System.in);
+	public static Random random = new Random();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int x, essai= 0, compteur = 1;
+		
+		System.out.println("Hello friend");
+		System.out.println("lancement du programme...");
+		
+		
+		x = random.nextInt(101);
+		
+		System.out.println("Devine à quel nombre je pense");
+		
+		while (essai != x) {
+			essai  = input.nextInt();
+			
+			if (essai == x) {
+				System.out.println("Félicitation tu as trouvé en "+ compteur +" coup");
+				
+			}
+			
+			else if (essai < x) {
+				System.out.println("je pense a un nombre plus grand");
+				
+			}
+			else if (essai > x) {
+				System.out.println("Je pense a un nombre plus petit");
+				
+			
+			
+			}
+			compteur += 1;
+
+		}
+		System.out.println("Fermeture du programme...");
+	}
+	
+}
+		
+		
+
+	
+
+
+
