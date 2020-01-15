@@ -643,6 +643,132 @@ public class jeuDevine {
 		
 		
 
+
+
+
+
+
+/* on veut programme ou joueur devine un nombre choisit par l'ordinateur 
+ * - ordi choisit un nombre entre 1 et 100
+ * - joueur entre une valeur 
+ * - si valeur joueur > valordi alors affiche que valordi est inférieure
+ * - si valeur joueur < valeurordi alors affiche que valeurordi est supérieure
+ * - si valeurjoueur == valeurordi alors partie s'arete et affiche le nombre de coup
+ * - quand partie finie joueur peut en redemarer une */
+
+
+import java.util.*;
+public class jeuDevineRestart {
+	static final Random random = new Random();
+	public static Scanner input = new Scanner(System.in);
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int x, essai, compteur= 1, nbPartie = 0;
+		boolean partieFinie = false, retry = false;
+		
+		System.out.println("Hello friend");
+		System.out.println("lancement du programme...");
+		
+		
+		
+		
+		while (nbPartie == 0 || (nbPartie > 0 && retry == true))
+			
+		{
+			
+			nbPartie = 1;
+			x = random.nextInt(101);
+			
+			if (x==0) 
+			{
+				x = 1;
+			}
+			
+			
+			System.out.println("J'ai choisis un nombre entre 1 et 100");
+			
+			
+			while (!partieFinie) 
+			{
+				
+				if (compteur == 1) 
+				{
+					System.out.println("essaie de deviner le nombre");
+				}
+				
+				essai = input.nextInt();
+				
+				
+				if (essai == x) 
+				{
+					System.out.println("Félicitations tu as trouvé, je pensais à "+ x);
+					partieFinie = true;
+					
+				}
+				
+				else if (essai < x)
+				{
+					System.out.println("Je pense à un nombre plus grand");
+					compteur += 1;
+					
+				}
+				
+				else if (essai > x)
+				{
+					System.out.println("Je pense a un nombre plus petit");
+					compteur += 1;
+				}
+				
+			}
+			
+			
+			System.out.println("Tu as trouvé en "+ compteur +" coups\nVeux tu essayer de faire mieux(y/n)?");
+			
+			boolean reponseValable = false;
+			
+			
+			while (!reponseValable)
+			{
+			
+				char rejouer;
+				
+				rejouer = input.next().charAt(0);
+				
+				if (rejouer == 'y' || rejouer == 'Y') 
+				{
+					
+					retry = true;
+					compteur = 1;
+					System.out.println("tres bien, rejouons une partie");
+					reponseValable = true;
+					partieFinie = false;
+				}
+				
+				else if (rejouer == 'n' || rejouer == 'N')
+				{
+					retry = false;
+					reponseValable = true;
+					
+				}
+			
+				
+			}
+			
+		
+	}
+	
+	System.out.println("D'accord arretons nous ici, nous avons fait "+ nbPartie +" parties");
+	
+	System.out.println("Fermeture du programme...");
+
+	}
+	
+
+}
+
 	
 
 
