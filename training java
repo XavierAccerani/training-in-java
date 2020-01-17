@@ -773,3 +773,209 @@ public class jeuDevineRestart {
 
 
 
+
+
+
+
+
+
+
+/*on veut programme qui  permet dispersee n allumettes: 
+ * - on choisit le nombre d'allumettes
+ * - on chisit si le j1 est un humain ou ordi
+ * - on choisit si le j2 est humain ou ordi
+ * - par tour on ramasse chacun 1,2ou 3 allumettes
+ * 
+ * - si ordi alors choisit nb aleatoire d'allumette 
+ * - quand allumette < 4 ordi choisit nb restant moins 1
+ * - quand reste 1 allumette ordi ramasse 1 */
+
+import java.util.*;
+public class jeuAllumettes {
+	final static Random random = new Random();
+	public static Scanner input = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int nbAllumettes, allumettesRetirees = 0;
+		int joueur1, joueur2;
+		
+		
+		System.out.println("Hello friend");
+		System.out.println("Lancement du programme...");
+		
+		System.out.println("Avec combien d'allumettes voulez vous jouer?");
+		nbAllumettes = input.nextInt() ;
+		System.out.println("Vous voulez jouer avec "+ nbAllumettes +" allumettes");
+		
+		
+		System.out.println("Le joueur 1 est il un ornateur(1) ou un humain (2)?");
+		joueur1 = input.nextInt();
+		
+		System.out.println("Et pour le joueur 2, cpu ou h ?");
+		joueur2 = input.nextInt();
+		
+		
+		int compteur = 1, resteAllumette = nbAllumettes;
+		
+		while (resteAllumette > 1)
+		{
+			if (compteur % 2 == 1)  // tour du joueur 1
+				{
+					if (joueur1 == 1)
+					
+					{
+						if (resteAllumette == 4) 
+						{
+							allumettesRetirees = 3;
+							
+						}
+						
+						else if (resteAllumette == 3) 
+						{
+							allumettesRetirees = 2;
+						}
+						
+						else if (resteAllumette == 2)
+						{
+							allumettesRetirees = 1;
+							
+						}
+						
+						else if (resteAllumette == 1)
+						{
+							allumettesRetirees = 1;
+						}
+						
+						else 
+						{
+							allumettesRetirees = random.nextInt(4);
+						}
+						
+						
+						if (allumettesRetirees == 0)
+						{
+							allumettesRetirees = 1;
+						}
+						
+						
+					}
+				}
+					if (joueur1 == 2)
+					{
+						System.out.println("c'est au joueur 1, combien d'allumettes veux tu retirer? ");
+						allumettesRetirees = input.nextInt();
+					}
+					
+					if (allumettesRetirees == 0)
+					{
+						allumettesRetirees = 1;
+					}	
+					
+					if (allumettesRetirees > 3)
+					{
+						allumettesRetirees = 3;
+					}
+					
+			
+					resteAllumette = resteAllumette - allumettesRetirees;
+					System.out.println("le joueur 1 a enlevé "+allumettesRetirees+" il reste "+ resteAllumette +" allumettes");
+					compteur ++;
+					
+				
+		
+			
+			 if (compteur % 2 == 0)  // tour du joueur 2 
+				{
+					if (joueur2 == 1)
+					{
+						if (resteAllumette == 4) 
+						{
+							allumettesRetirees = 3;
+							
+						}
+						
+						else if (resteAllumette == 3) 
+						{
+							allumettesRetirees = 2;
+						}
+						
+						else if (resteAllumette == 2)
+						{
+							allumettesRetirees = 1;
+							
+						}
+						
+						else if (resteAllumette == 1)
+						{
+							allumettesRetirees = 1;
+						}
+						
+						else if (resteAllumette != 3 && resteAllumette != 2 && resteAllumette != 4)
+						{
+							allumettesRetirees = random.nextInt(4);
+						}
+						
+						if (allumettesRetirees == 0)
+						{
+							allumettesRetirees = 1;
+						}
+						
+					}
+					
+					else if (joueur2 == 2)
+					{
+						System.out.println("C'est au joueur 2, combien d' allumettes veux tu retirer?  ");
+						allumettesRetirees = input.nextInt() ; 
+					}
+					
+					if (allumettesRetirees == 0)
+					{
+						allumettesRetirees = 1;
+					}
+					
+					if (allumettesRetirees > 3)
+					{
+						allumettesRetirees = 3;
+					}
+					
+					
+					
+					resteAllumette = resteAllumette - allumettesRetirees;
+					System.out.println("Le joueur 2 a enlevé "+allumettesRetirees+" il reste "+ resteAllumette +" allumettes");
+					compteur ++;
+				}
+			 if (resteAllumette <= 0)
+			 {
+				 resteAllumette = -10;
+			 }
+			
+		}
+		
+		String joueur= ""; 
+		
+		
+		if (compteur % 2 == 0)
+		{
+			joueur = "joueur 2";
+		}
+		
+		else if (compteur %2 == 1)
+		{
+			joueur = "joueur 1";
+		}
+		System.out.println("Voila la partie est terminée et le "+ joueur +" à gagné! ");
+		
+		System.out.println("Fermeture du programme...");
+		
+		
+
+	}
+
+}
+
+
+
+
+
